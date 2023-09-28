@@ -1,0 +1,6 @@
+[
+    {
+        "usuarioId": 1, "nombres" : "Christopher", "apellidos" : "Garrido", "clave" : "123456",
+        "correo" : "garrido@upc.edu.pe", "creacion": "30/11/2023", "ultimoIngreso": "30/11/2023"
+    }
+]
