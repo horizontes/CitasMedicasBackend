@@ -1,34 +1,45 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.sql.Date;
 
 
 @Setter
 @Getter
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SequenceGenerator(name="cita_id_seq", initialValue=1, allocationSize=100)
 public class Citas {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="cita_id_seq")
     private Integer citaId;
-    private Integer medicoId;
-    private Integer pacienteId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Medico medico;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Usuario usuario;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Sede sede;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Especialidad especialidad;
+
     private String fecha;
     private String hora;
     private Integer duracion;
+    private boolean confirmado;
+
+    private Date creacion;
+    private Date actualizacion;
+    private int estado;
 
 }

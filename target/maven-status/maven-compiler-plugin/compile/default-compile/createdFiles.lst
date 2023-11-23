@@ -1,0 +1,6 @@
+com\example\demo\model\Rol.class
+com\example\demo\model\Medico.class
+com\example\demo\model\Sede.class
+com\example\demo\model\Administrativo.class
+com\example\demo\model\Especialidad.class
+com\example\demo\model\Paciente.class
