@@ -14,14 +14,27 @@ import java.util.Set;
 @SequenceGenerator(name="sede_id_seq", initialValue=1, allocationSize=100)
 public class Sede {
 
+    public Sede(int sedeId){
+        this.sedeId = sedeId;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="sede_id_seq")
-    private Integer usuarioId;
+    @Column(name = "sede_id")
+    private Integer sedeId;
 
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
     private String nombre;
+
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
     private String direccion;
+
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
     private String distrito;
+
     private String coordenadas;
+
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
     private String referencia;
 
     private Date creacion;

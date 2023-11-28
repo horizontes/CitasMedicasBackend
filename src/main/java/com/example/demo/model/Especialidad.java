@@ -14,10 +14,16 @@ import java.util.Set;
 @SequenceGenerator(name="especialidad_id_seq", initialValue=1, allocationSize=100)
 public class Especialidad {
 
+    public Especialidad(int especialidadId){
+        this.especialidadId = especialidadId;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="especialidad_id_seq")
+    @Column(name = "especialidad_id")
     private Integer especialidadId;
 
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS", unique = true)
     private String nombre;
 
     private Date creacion;

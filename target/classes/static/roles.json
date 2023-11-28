@@ -1,0 +1,8 @@
+[
+    {
+        "nombre" : "Paciente", "acceso" : 1
+    },
+    {
+        "nombre" : "Administrativo", "acceso" : 2
+    }
+]

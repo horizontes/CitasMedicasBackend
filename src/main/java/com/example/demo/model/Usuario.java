@@ -16,11 +16,21 @@ import java.util.Set;
 @SequenceGenerator(name="usuario_id_seq", initialValue=1, allocationSize=100)
 public class Usuario {
 
+    public Usuario(int usuarioId){
+        this.usuarioId = usuarioId;
+    }
+
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="usuario_id_seq")
+    @Column(name = "usuario_id")
     private Integer usuarioId;
+
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
     private String nombres;
+
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
     private String apellidos;
+
     private String clave;
     private String correo;
 

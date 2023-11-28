@@ -1,0 +1,14 @@
+[
+    { "id": 1, "nombre": "Clinica San Pablo - Surco", "distrito": "Surco", "direccion": "Av. El polo 789", "referencia": "Cerca de Centro el Polo" },
+    { "id": 2, "nombre": "Clinica San Gabriel - San Miguel", "distrito": "San Miguel", "direccion": "Av. la Marina 2955", "referencia": "Cerca UPC San Miguel" },
+    { "id": 3, "nombre": "Clinica Santa Martha del Sur - SJM", "distrito": "San Juan de Miraflores", "direccion": "Av. Belisario Suarez 998", "referencia": "Cerca de Municipalidad SJM" },
+    { "id": 4, "nombre": "Clinica San Juan Bautista - SJL", "distrito": "San Juan de Lurigancho", "direccion": "Av. Próceres de la Independencia 1764", "referencia": "Cerca de Estacion Los Jardines del Metro" },
+    { "id": 5, "nombre": "Clinica Jesus del Norte - Independencia", "distrito": "Independencia", "direccion": "Av. Carlos Izaguirre 153", "referencia": "Cerca de MegaPlaza" },
+    { "id": 6, "nombre": "Clinica San Pablo - Trujillo", "distrito": "La Merced - Trujillo", "direccion": "Av. Húsares de Junín 690", "referencia": "Cerca de la UPAO" },
+    { "id": 7, "nombre": "Clinica San Pablo - Huaraz", "distrito": "Huaraz - Huaraz", "direccion": "Jr. Huaylas Nº 172", "referencia": "Cerca de la Municipalidad de Huaraz" },
+    { "id": 8, "nombre": "Chacarilla Centro Especializado - San Borja", "distrito": "San Borja", "direccion": "Av. Primavera 999", "referencia": "Cerca del cruce Angamos con Panombrericana Sur" },
+    { "id": 9, "nombre": "Centro Dental San Pablo - Surco", "distrito": "Surco", "direccion": "Av. Manuel Olguín 901", "referencia": "Cerca de Centro el Polo" },
+    { "id": 10, "nombre": "Clinica San Pablo - Asia", "distrito": "Asia", "direccion": "Ctra. Panombrericana S Km. 97.5", "referencia": "Cerca del boulevar de Asia" },
+    { "id": 11, "nombre": "Clinica San Pablo - Arequipa", "distrito": "Cerro Colorado - Arequipa", "direccion": "Av. Metropolitana , esquina con Calle 7 ", "referencia": "Cerca del Colegio Domingo Savio" }
+]
+    

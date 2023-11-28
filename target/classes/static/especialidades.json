@@ -1,0 +1,19 @@
+[
+  { "nombre":"Anatomia", "especialidadId":1 }, { "nombre":"Patológica", "especialidadId":2 }, { "nombre":"Anestesiología", "especialidadId":3 }, { "nombre":"Cardiología", "especialidadId":4 }, 
+  { "nombre":"Cirugía De Cabeza, Cuello Y Maxilofacial", "especialidadId":5 }, { "nombre":"Cirugía General", "especialidadId":6 } , { "nombre":"Cirugía Oncológica", "especialidadId":7 }, 
+  { "nombre":"Cirugía Pediátrica", "especialidadId":8 }, { "nombre":"Cirugía Plástica", "especialidadId":9 }, { "nombre":"Cirugía De Tórax Y Cardiovascular", "especialidadId":10 }, 
+  { "nombre":"Dermatología", "especialidadId":11 }, { "nombre":"Endocrinología", "especialidadId":12 }, { "nombre":"Gastroenterología", "especialidadId":52 }, { "nombre":"Geriatría", "especialidadId":53 }, 
+  { "nombre":"Ginecología Y Obstetricia", "especialidadId":54 }, { "nombre":"Hematología", "especialidadId":55 }, { "nombre":"Inmunología Y Alergia", "especialidadId":13 } , 
+  { "nombre":"Medicina Ocupacional Y Del Medio Ambiente", "especialidadId":14 }, { "nombre":"Medicina De Emergencias Y Desastres", "especialidadId":15 }, 
+  { "nombre":"Medicina De Enfermedades Infecciosas Y Tropicales", "especialidadId":16 }, { "nombre":"Medicina Familiar Y Comunitaria", "especialidadId":17 }, 
+  { "nombre":"Medicina Fisica Y De Rehabilitación", "especialidadId":18 }, { "nombre":"Medicina Intensiva", "especialidadId":19 }, { "nombre":"Medicina Interna", "especialidadId":20 }, 
+  { "nombre":"Medicina Nuclear", "especialidadId":21 } , { "nombre":"Medicina Oncológica", "especialidadId":22 }, { "nombre":"Nefrología", "especialidadId":23 }, { "nombre":"Neumología", "especialidadId":24 }, 
+  { "nombre":"Neurocirugía", "especialidadId":25 }, { "nombre":"Neurología", "especialidadId":26 }, { "nombre":"Oftalmología", "especialidadId":27 }, { "nombre":"Ortopedia Y Traumatología", "especialidadId":28 }, 
+  { "nombre":"Otorrinolaringología", "especialidadId":29 }, { "nombre":"Patología Clínica", "especialidadId":30 }, { "nombre":"Pediatría", "especialidadId":31 }, { "nombre":"Psiquiatría", "especialidadId":32 }, 
+  { "nombre":"Radiología", "especialidadId":33 }, { "nombre":"Radioterapia", "especialidadId":34 }, { "nombre":"Reumatología", "especialidadId":35 }, { "nombre":"Urología", "especialidadId":36 }, 
+  { "nombre":"Odontología", "especialidadId":37 }, { "nombre":"Cardiología Pediátrica", "especialidadId":38 }, { "nombre":"Endocrinología Pediátrica", "especialidadId":39 }, 
+  { "nombre":"Gastroenterología Pediátrica", "especialidadId":40 }, { "nombre":"Ginecología Oncológica", "especialidadId":41 }, { "nombre":"Medicina Intensiva Pediátrica", "especialidadId":42 }, 
+  { "nombre":"Nefrología Pediátrica", "especialidadId":43 }, { "nombre":"Neonatología", "especialidadId":44 }, { "nombre":"Neumología Pediátrica", "especialidadId":45 }, 
+  { "nombre":"Neurocirugía Pediátrica", "especialidadId":46 }, { "nombre":"Neurología Pediátrica", "especialidadId":47 }, { "nombre":"Oncología Pediátrica", "especialidadId":48 }, 
+  { "nombre":"Psiquiatria De Adicciones", "especialidadId":49 }, { "nombre":"Psiquiatria Del Niño Y Del Adolescente", "especialidadId":50 }, { "nombre":"Urología Pediátrica", "especialidadId":51 }
+]

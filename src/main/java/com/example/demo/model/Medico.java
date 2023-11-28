@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
-import java.util.Set;
 
 @Setter
 @Getter
@@ -15,11 +14,18 @@ import java.util.Set;
 @SequenceGenerator(name="medico_id_seq", initialValue=1, allocationSize=100)
 public class Medico {
 
+    public Medico(int medicoId){
+        this.medicoId = medicoId;
+    }
+
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="medico_id_seq")
+    @Column(name = "medico_id")
     private Integer medicoId;
-    private String nombres;
-    private String apellidos;
+
+    @Column(columnDefinition = "NVARCHAR(255) COLLATE Modern_Spanish_CI_AS")
+    private String nombreCompleto;
+
     private String clave;
     private String correo;
     private String telefono;
