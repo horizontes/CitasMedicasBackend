@@ -41,7 +41,7 @@ public class Sede {
     private Date actualizacion;
     private int estado;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
     @JoinTable(
             name = "Sede_Especialidad",
             joinColumns = { @JoinColumn(name = "sede_id") },

@@ -30,7 +30,10 @@ public class Especialidad {
     private Date actualizacion;
     private int estado;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @Transient
+    private Sede[] sedes;
+
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
     @JoinTable(
             name = "Especialidad_Medico",
             joinColumns = { @JoinColumn(name = "especialidad_id") },

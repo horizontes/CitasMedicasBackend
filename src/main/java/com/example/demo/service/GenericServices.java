@@ -1,27 +1,24 @@
-package com.example.demo.controller;
-
+package com.example.demo.service;
 
 import com.example.demo.model.*;
 import com.example.demo.repository.*;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-@CrossOrigin(origins = "http://localhost:4200")
-@RestController
-@RequestMapping("/api")
-public class EntitiesController {
+@Service
+public class GenericServices {
 
-    //@PostConstruct
     void init(){
 
         Gson gson = new Gson();
@@ -29,7 +26,7 @@ public class EntitiesController {
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(
                              new FileInputStream("src/main/resources/static/especialidades.json"), "UTF-8"))
-                     ) {
+        ) {
 
             Especialidad[] cs = gson.fromJson(reader, Especialidad[].class);
             Arrays.stream(cs).forEach(e -> {
@@ -156,92 +153,11 @@ public class EntitiesController {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
-    @GetMapping("/{entidad}")
-    public ResponseEntity<List<Object>> getCitas(@PathVariable("entidad") String entidad) {
-
-        switch (entidad){
-
-            case "citas":
-                return new ResponseEntity<>(
-                        StreamSupport
-                                .stream(citasRepositorio.findAll().spliterator(), false)
-                                .collect(Collectors.toList())
-                        , HttpStatus.OK);
-
-            case "especialidades":
-
-                return new ResponseEntity<>(
-                        StreamSupport
-                                .stream(especialidadRepositorio.findAll().spliterator(), false)
-                                .collect(Collectors.toList())
-                        , HttpStatus.OK);
-
-            case "medicos":
-
-                return new ResponseEntity<>(
-                        StreamSupport
-                                .stream(medicoRepositorio.findAll().spliterator(), false)
-                                .collect(Collectors.toList())
-                        , HttpStatus.OK);
-
-            case "roles":
-
-                return new ResponseEntity<>(
-                        StreamSupport
-                                .stream(rolRepositorio.findAll().spliterator(), false)
-                                .collect(Collectors.toList())
-                        , HttpStatus.OK);
-
-            case "sedes":
-
-                return new ResponseEntity<>(
-                        StreamSupport
-                                .stream(sedeRepositorio.findAll().spliterator(), false)
-                                .collect(Collectors.toList())
-                        , HttpStatus.OK);
-
-            case "usuarios":
-
-                return new ResponseEntity<>(
-                        StreamSupport
-                                .stream(usuarioRepositorio.findAll().spliterator(), false)
-                                .collect(Collectors.toList())
-                        , HttpStatus.OK);
-
-            default: new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
-        }
-
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-    }
-
-    @GetMapping("/citas/{id}")
-    public ResponseEntity<Citas> getCitas(@PathVariable("id") Integer id) {
-
-        Optional<Citas> tutorialData = citasRepositorio.findById(id);
-
-        if (tutorialData.isPresent()) {
-            return new ResponseEntity<>(tutorialData.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PostMapping("/citas")
-    public ResponseEntity<Citas> crearCitas(@RequestBody Citas cita) {
-        try {
-            Citas _citas = citasRepositorio.save(cita);
-            return new ResponseEntity<>(_citas, HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
     private void generarCita(){
 
         List<Usuario> usuarios = StreamSupport.stream(
                 usuarioRepositorio.findAll().spliterator(),
-                        false).toList();
+                false).toList();
 
         List<Especialidad> especialidades = StreamSupport.stream(
                 especialidadRepositorio.findAll().spliterator(),
@@ -260,27 +176,27 @@ public class EntitiesController {
                 false).collect(Collectors.toSet());
 
 /**
-        var medicosSet = StreamSupport.stream(
-                medicoRepositorio.findAll().spliterator(),
-                false).collect(Collectors.toSet());
+ var medicosSet = StreamSupport.stream(
+ medicoRepositorio.findAll().spliterator(),
+ false).collect(Collectors.toSet());
 
-        var rolesSet = StreamSupport.stream(
-                rolRepositorio.findAll().spliterator(),
-                false).collect(Collectors.toSet());
+ var rolesSet = StreamSupport.stream(
+ rolRepositorio.findAll().spliterator(),
+ false).collect(Collectors.toSet());
 
-        var especialidadesSet = StreamSupport.stream(
-                especialidadRepositorio.findAll().spliterator(),
-                false).collect(Collectors.toSet());
+ var especialidadesSet = StreamSupport.stream(
+ especialidadRepositorio.findAll().spliterator(),
+ false).collect(Collectors.toSet());
 
-        sedes.forEach(s -> {
-            s.setEspecialidades(especialidadesSet);
-            sedeRepositorio.save(s);
-        });
+ sedes.forEach(s -> {
+ s.setEspecialidades(especialidadesSet);
+ sedeRepositorio.save(s);
+ });
 
-        especialidades.forEach(e -> {
-            e.setMedicos(medicosSet);
-            especialidadRepositorio.save(e);
-        });
+ especialidades.forEach(e -> {
+ e.setMedicos(medicosSet);
+ especialidadRepositorio.save(e);
+ });
  **/
         usuarios.forEach(u ->{
             if (Objects.isNull(u.getRol()) || u.getRol().isEmpty()) {

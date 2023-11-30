@@ -34,6 +34,9 @@ public class Usuario {
     private String clave;
     private String correo;
 
+    @Column(columnDefinition = "integer default 0")
+    private int intentos;
+
     private Date creacion;
     private Date actualizacion;
     private int estado;

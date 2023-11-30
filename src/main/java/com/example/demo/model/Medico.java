@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -35,5 +36,16 @@ public class Medico {
     private Date creacion;
     private Date actualizacion;
     private int estado;
+
+    @Transient
+    private int colaPacientes;
+
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "Medico_Sede",
+            joinColumns = { @JoinColumn(name = "medico_id") },
+            inverseJoinColumns = { @JoinColumn(name = "sede_id") }
+    )
+    Set<Sede> sedes;
 
 }
